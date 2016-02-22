@@ -49,7 +49,6 @@ node default {
   group   => 'root',
   mode    => '0644',
   owner   => 'root',
-  type    => 'file',
 }
  
 }
