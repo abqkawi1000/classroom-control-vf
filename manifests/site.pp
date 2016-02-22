@@ -42,5 +42,16 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  notify { "Kawi's box name is ${::hostname}": }
+ notify { "Kawi's box name is ${::hostname}": }
+ file { '/etc/motd':
+  ensure  => 'file',
+  content => 'Welcome to my Puppet training box',
+  ctime   => '2016-02-22 21:58:25 +0000',
+  group   => '0',
+  mode    => '0644',
+  mtime   => '2016-02-22 21:58:25 +0000',
+  owner   => '0',
+  type    => 'file',
+}
+ 
 }
