@@ -43,14 +43,14 @@ node default {
   # Example:
   #   class { 'my_class': }
   # notify { "Kawi's box name is ${::hostname}": }
- file { '/etc/motd':
-  noop    => true,
-  ensure  => 'file',
-  content => 'Welcome to my Puppet training box',
-  group   => 'root',
-  mode    => '0644',
-  owner   => 'root',
-}
+ #file { '/etc/motd':
+  #noop    => true,
+  #ensure  => 'file',
+  #content => 'Welcome to my Puppet training box',
+  #group   => 'root',
+  #mode    => '0644',
+  #owner   => 'root',
+#}
 
 exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
   path     => '/usr/local/bin',
