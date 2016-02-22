@@ -52,10 +52,9 @@ node default {
   owner   => 'root',
 }
 
-exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd"}
-  path     => '/usr/local/bin'
-  creates  => '/etc/motd'
+exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+  path     => '/usr/local/bin',
+  creates  => '/etc/motd',
+  }
 
-
- 
 }
