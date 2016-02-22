@@ -44,7 +44,7 @@ node default {
   #   class { 'my_class': }
   # notify { "Kawi's box name is ${::hostname}": }
  file { '/etc/motd':
-  noop    => 'true'
+  noop    => 'true',
   ensure  => 'file',
   content => 'Welcome to my Puppet training box',
   group   => 'root',
