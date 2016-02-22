@@ -47,10 +47,10 @@ node default {
   ensure  => 'file',
   content => 'Welcome to my Puppet training box',
   ctime   => '2016-02-22 21:58:25 +0000',
-  group   => '0',
+  group   => 'root',
   mode    => '0644',
   mtime   => '2016-02-22 21:58:25 +0000',
-  owner   => '0',
+  owner   => 'root',
   type    => 'file',
 }
  
