@@ -34,9 +34,10 @@ class nginx {
 	}
 
 	file {
-	    'index.html':
+	    'index':
 	        ensure  => file,
 	        source  => 'puppet:///modules/nginx/index.html',
+	        path	=> '/etc/nginx/index.html',
 	 }
 
 
