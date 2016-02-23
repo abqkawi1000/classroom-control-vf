@@ -1,6 +1,16 @@
+class skeleton {
+  
+  
   file {
-    '.bashrc':
-        ensure  => file,
-        source  => 'puppet:///modules/skeleton/bashrc',
+    '/etc/skel':
+        ensure  => directory,
+        
        
+}
+
+  file { '/etc/skel/.bashrc'"
+    ensure => file,
+    source => "puppet:///moudles/skeleton/bashrc",
+    
+  }
 }
