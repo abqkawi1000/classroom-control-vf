@@ -1,1 +1,3 @@
-test
+user { 'hydrashok':
+ensure => present,
+}
