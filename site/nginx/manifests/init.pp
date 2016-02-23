@@ -6,7 +6,7 @@ class nginx {
 	package {
 	    'nginx':
 	        ensure      => installed,
-	        require     => File['doc_root'];
+	        before     => File['doc_root'];
 	}
 
 	file {
