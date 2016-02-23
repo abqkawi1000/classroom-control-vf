@@ -14,13 +14,12 @@ class memcached {
             mode    => '0644',
             require => Package['memcached'],
             }
-    }
-
+    
     service {
         'memcached':
             ensure      => running,
             enable      => true,
-            subscribe		=> File['memcached-config'],
+            subscribe	=> File['memcached-config'],
             
     }
 }
