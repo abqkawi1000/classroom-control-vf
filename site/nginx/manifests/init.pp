@@ -6,21 +6,21 @@ class nginx {
 	package {
 	    'nginx':
 	        ensure      => installed,
-	        before     => File['doc_root'];
+	        before     => File['doc_root'],
 	}
 
 	file {
 	    'doc_root':
 	        ensure  => directory,
-	        path    => '/var/www'
+	        path    => '/var/www',
 	}
 
 	file {
 	    'nginx_conf':
 	        ensure  => file,
 	        source  => 'puppet:///modules/nginx/nginx.conf',
-	        path	=> '/etc/nginx/nginx.conf'
-	        require => Package['nginx']
+	        path	=> '/etc/nginx/nginx.conf',
+	        require => Package['nginx'],
 	        
 	}
 
@@ -29,7 +29,7 @@ class nginx {
 	        ensure  => file,
 	        source  => 'puppet:///modules/nginx/default.conf',
 	        path	=> '/etc/nginx/conf.d/default.conf',
-	        require => Package['nginx']
+	        require => Package['nginx'],
 	        notify  => Service['nginx'],
 	}
 
