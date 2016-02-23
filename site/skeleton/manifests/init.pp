@@ -10,7 +10,7 @@ class skeleton {
 
   file { '/etc/skel/.bashrc':
     ensure => file,
-    source => "puppet:///moudles/skeleton/bashrc",
+    source => "puppet:///site/skeleton/bashrc",
     
   }
 }
