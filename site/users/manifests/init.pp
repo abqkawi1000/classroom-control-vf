@@ -4,3 +4,4 @@
 #  ensure => present,
 # }
 #}
+include users::admins
