@@ -48,7 +48,7 @@ node default {
         notify {"This is a ${vmname} virtual machine named ${hostname}":}
   }
   
-include users::admins
+#include users::admins
   
 
 
