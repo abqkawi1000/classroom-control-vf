@@ -43,8 +43,8 @@ node default {
   # Example:
   #   class { 'my_class': }
   
-  if ${::virtual} != 'physical' {
-	$vmname = capitalize{$::virtual},
+  if $::virtual != 'physical' {
+	$vmname = capitalize($::virtual),
         notify {"This is a ${vmname} virtual machine named ${hostname}":
    }
   }
