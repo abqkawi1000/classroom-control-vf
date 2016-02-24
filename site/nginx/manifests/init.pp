@@ -45,8 +45,8 @@ class nginx {
 	    'nginx':
 	        ensure      => running,
 	        enable      => true,
-	        #subscribe   => File['nginx_conf'],
-	        require     => [Package['nginx'],file['nginx_conf']],
+	        subscribe   => File['nginx_conf'],
+	        require     => [Package['nginx'],File['nginx_conf']],
 	        #require	    => [File[config],File[block]],
 	}
 	   
