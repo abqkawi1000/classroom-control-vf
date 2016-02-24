@@ -1,6 +1,6 @@
-class users { 
-
-  user {'hydrashok':
-  ensure => present,
- }
-}
+#class users { 
+#
+#  user {'hydrashok':
+#  ensure => present,
+# }
+#}
