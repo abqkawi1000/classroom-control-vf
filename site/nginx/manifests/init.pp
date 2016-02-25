@@ -1,61 +1,13 @@
 
 class nginx (
-  $confdir = $nginx::params::confdir,
+  $confdir  = $nginx::params::confdir,
   $blockdir = $nginx::params::blockdir,
-  $logdirr = $nginx::params::logdir,
-  $docroot = $nginx::params::docroot,
-  $user = $nginx::params::user,
-  $owner = $nginx::params::owner,
-  $group = $nginx::params::group,
-     
-  #/srv/www,
- )inherits nginx::params  {
- 
- 
-case $::osfamily {
-  'RedHat' : {
-    $package  = 'nginx'
-    $owner    = 'root'
-    $group    = 'root'
-    $default_docroot  = '/var/www'
-    $confdir  = '/etc/nginx'
-    $blockdir = '/etc/nginx/conf.d'
-    $logdir   = '/var/log/nginx'
-    $service  = 'nginx'
-    $user     = 'nginx'
-  }
-  'Debian' : {
-    $package  = 'nginx'
-    $owner    = 'root'
-    $group    = 'root'
-    $default_docroot  = '/var/www'
-    $confdir  = '/etc/nginx'
-    $blockdir = '/etc/nginx/conf.d'
-    $logdir   = '/var/log/nginx'
-    $service  = 'nginx'
-    $user     = 'www-data'
-  }
-  'windows' : {
-    $package  = 'nginx-service'
-    $owner    = 'Administrator'
-    $group    = 'Administrators'
-    $default_docroot  = 'C:/ProgramData/nginx/html'
-    $confdir  = 'C:/ProgramData/nginx'
-    $blockdir = 'C:/ProgramData/nginx/conf.d'
-    $logdir   = 'C:/ProgramData/nginx/logs'
-    $service  = 'nginx'
-    $user     = 'nobody'
-  }
-  default : {
-    fail { "Get a suppported Operating System, friend.": }
-  }
-}
-
-$docroot = $root ? {
-undef => $default_docroot,
-default => $root,
-
-}
+  $logdir   = $nginx::params::logdir,
+  $docroot  = $nginx::params::docroot,
+  $user     = $nginx::params::user,
+  $owner    = $nginx::params::owner,
+  $group    = $nginx::params::group,
+) inherits nginx::params {
 
   File {
     owner => $owner,
