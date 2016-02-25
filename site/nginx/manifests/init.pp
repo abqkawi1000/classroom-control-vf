@@ -1,9 +1,17 @@
 
 class nginx (
-  $root = undef,
+  $confdir = $nginx::params::confdir,
+  $blockdir = $nginx::params::blockdir,
+  $logdirr = $nginx::params::logdir,
+  $docroot = $nginx::params::docroot,
+  $user = $nginx::params::user,
+  $owner = $nginx::params::owner,
+  $group = $nginx::params::group,
+     
   #/srv/www,
- ){
-
+ )inherits nginx::params  {
+ 
+ 
 case $::osfamily {
   'RedHat' : {
     $package  = 'nginx'
