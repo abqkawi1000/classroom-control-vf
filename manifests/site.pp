@@ -52,6 +52,9 @@ node default {
  
  $message = hiera('message')
  notify { $message: }
+ 
+ #Better hiera lookup
+ #notify { "${hiera('message')}": }
   
 
   # include users
