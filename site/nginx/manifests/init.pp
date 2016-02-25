@@ -1,6 +1,6 @@
 
 class nginx (
-  root = undef,
+  $root = undef,
   #/srv/www,
  ){
 
